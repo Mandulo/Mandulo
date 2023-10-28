@@ -1,9 +1,9 @@
 import boto3
 
 s3 = boto3.client('s3')
-rekognition = boto3.client('rekognition', region_name = 'us-eat-1')
+rekognition = boto3.client('rekognition', region_name = 'us-east-1')
 dynamodbTableName = 'student-record'
-dynamodb = boto3.client('dynamodb', region_name = 'us-east-1')
+dynamodb = boto3.resource('dynamodb', region_name = 'us-east-1')
 studentTable = dynamodb.Table(dynamodbTableName)
 
 
