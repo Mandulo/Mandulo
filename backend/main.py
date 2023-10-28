@@ -1,13 +1,12 @@
 import boto3
 
+s3 = boto3.client('s3')
+rekognition = boto3.client('rekognition', region_name = 'us-eat-1')
+dynamodbTableName = 'student-record'
+dynamodb = boto3.client('dynamodb', region_name = 'us-east-1')
+studentTable = dynamodb.Table(dynamodbTableName)
 
 
-def main():
-    s3 = boto3.client(s3)
-    rekognition = boto3.client('rekognition', region_name = 'us-eat-1')
-    dynamodbTableName = 'student-record'
-    dynamodb = boto3.client('dynamodb', region_name = 'us-east-1')
-    studentTable = dynamodb.Table(dynamodbTableName)
 
 def lambda_handler(event, context):
     print(event)
@@ -22,7 +21,7 @@ def lambda_handler(event, context):
             name = key.split('.')[0].split('_')
             firstName = name[0]
             lastName = name[1]
-            #register_student = 
+            register_student(faceId, firstName, lastName)
 
 
 
@@ -30,6 +29,27 @@ def lambda_handler(event, context):
         print(e)
         print('Error processing object {} from bucket {}. '.format(key, bucket))
         raise e
+    
+def index_student_image(bucket, key):
+    response = rekognition.index_faces(
+        Image = {
+            'S3Object': {
+                'Bucket': bucket,
+                'Name': key
+            }
+        },
+        CollectionId = 'students'
+    )
+    return response
 
-if __name__ == "__main__":
-    main()
+def register_student(faceId, firstName, lastName):
+    studentTable.put_item(
+        Item={
+            'rekognitionId': faceId,
+            'firstName': firstName,
+            'lastName':lastName,
+
+        }
+
+    )
+
