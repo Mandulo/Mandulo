@@ -44,9 +44,9 @@ cd Denison-Lib-Mandulo
 ### Authentication
 * Authentication to check attendance of students, user may take full class picture and upload via our web-app.
 
- Image will be send to appropriate AWS S3 bucket through API Gateway we built. Whenever there is a change occur in S3 bucket, it triggers our lambda function to be executed.
+* Image will be send to appropriate AWS S3 bucket through API Gateway we built. Whenever there is a change occur in S3 bucket, it triggers our lambda function to be executed.
 
- Our authentification lambda function will then detect each of faces that can be found in given picture, sort them with unique faceIDs. AWS Rekognition ML model will then compare each faces with the collection of faces - user's pre-initialized student face database. If machine finds similar face as much as they can be stated as same person, it will update attendance status in the DynamoDB  
+* Our authentification lambda function will then detect each of faces that can be found in given picture, sort them with unique faceIDs. AWS Rekognition ML model will then compare each faces with the collection of faces - user's pre-initialized student face database. If machine finds similar face as much as they can be stated as same person, it will update attendance status in the DynamoDB  
 
 
 
