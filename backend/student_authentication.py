@@ -14,6 +14,12 @@ attendanceId = []
 def lambda_handler(event, context):
     print('event: ', json.dumps(event))
     Key = event['Records'][0]['s3']['object']['key']
+    existId = []
+    tableIds = studentTable.scan(
+        Select='ALL_ATTRIBUTES'
+        )
+    for rekogId in tableIds['Items']:
+        existId.append(rekogId['rekognitionid'])
     try:
         response = index_student_image(bucketName,Key)
         print(response)
@@ -25,14 +31,20 @@ def lambda_handler(event, context):
         try:
             response1=rekognition.search_faces(CollectionId='students',
                                                 FaceId=record['Face']['FaceId'],
-                                                MaxFaces=2,
+                                                MaxFaces=3,
                                                 FaceMatchThreshold= threshold
                                             )
             print(response1)
         except Exception as e:
             print("failed")
             raise e
-        attendanceId.append(response1['FaceMatches'][0]['Face']['FaceId'])
+        for result in response1['FaceMatches']:
+            print("=======////////////////===============")
+            print(response1['FaceMatches'])
+            if result['Face']['FaceId'] in existId:
+                attendanceId.append(result['Face']['FaceId'])
+            else:
+                continue
     for faceID in attendanceId:
         update_attendance(faceID, 'yes')
 
@@ -46,6 +58,8 @@ def update_attendance(faceId, attendance):
             ExpressionAttributeValues={
                 ':yes' : attendance
             })
+    print("======================")
+    print(faceId)
     print("UPDATED_NEW")
     return True
 
