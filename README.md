@@ -46,7 +46,11 @@ cd Denison-Lib-Mandulo
 ###### Note: We used Dynomo DB provided by AWS 
 
 ### Authentication
-* Pictures will be uploaded through node js, named 'app.js', to AWS S3 bucket, named 'visitor-student-image-storage'. Once this bucket detects a new change, student_authorization, is triggered and the authetication starts. The metadata of each face would be detected and compared with the metadata of the pictures from another S3 butcket, named 'student-image-storage'. If the confidence parameter for a student is higher than the threshold value, then those students are approved for that day's attendance. This information would be updated to the daily attendance record table, named 'student-record', from DynamoDB changing the 'attendance' value with the matching rekognitionId(primary Id) the most would be modified to 'Yes' from 'No'. Otherwise, it does not change. 
+* Authentication to check attendance of students, user may take full class picture and upload via our web-app.
+
+ Image will be send to appropriate AWS S3 bucket through API Gateway we built. Whenever there is a change occur in S3 bucket, it triggers our lambda function to be executed.
+
+ Our authentification lambda function will then detect each of faces that can be found in given picture, sort them with unique faceIDs. AWS Rekognition ML model will then compare each faces with the collection of faces - user's pre-initialized student face database. If machine finds similar face as much as they can be stated as same person, it will update attendance status in the DynamoDB  
 
 
 
