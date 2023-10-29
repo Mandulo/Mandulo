@@ -35,11 +35,9 @@ cd Denison-Lib-Mandulo
 
 #### Processing Image
 * Uploaded photo data will be connected with student registration server and find each students in the photo from student registration server data using Amazon Rekognition.
-###### Note: We used pretrained Amazon Rekognition provided by AWS
 
 #### Storing data
 * Student attendance information need to be stored and updated in the server database.
-###### Note: We used Dynomo DB provided by AWS 
 
 ### Authentication
 * Authentication to check attendance of students, user may take full class picture and upload via our web-app.
@@ -47,16 +45,6 @@ cd Denison-Lib-Mandulo
 * Image will be send to appropriate AWS S3 bucket through API Gateway we built. Whenever there is a change occur in S3 bucket, it triggers our lambda function to be executed.
 
 * Our authentification lambda function will then detect each of faces that can be found in given picture, sort them with unique faceIDs. AWS Rekognition ML model will then compare each faces with the collection of faces - user's pre-initialized student face database. If machine finds similar face as much as they can be stated as same person, it will update attendance status in the DynamoDB  
-
-
-
-###### Note: Required configurations or integrations are handled via API Gateway.
-
-### Configuration
-1. Ensure your AWS CLI is configured with the appropriate credentials
-```
-aws configure
-```
 
 
 
