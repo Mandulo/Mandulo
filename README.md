@@ -18,21 +18,23 @@ rekognition Api is accessible through python. https://docs.aws.amazon.com/manage
 * Automated Deployment: Deploy AWS S3 buckets, DynamoDB, and Lambda by sending images from 'app.js' using interface via AWS Gateway. 
 * Monitoring: Keep an eye on your resources and operations with AWS CloudWatch integration.
 
-### Prerequisites
-* AWS CLI installed and configured with the necessary permissions.
-* Node.js 14.x
-
-### Installation
-Clone the repository
-```
-$ git clone https://github.com/Denison-Library-Mandulo/Denison-Lib-Mandulo.git
-
-```
-
 Navigate to the project directory:
 ```
 cd Denison-Lib-Mandulo
 ```
+
+### Pipeline
+#### Initialization
+* School admin needs to connect with student registration server data with the attendance tracker.
+
+#### Processing Image
+* Uploaded photo data will be connected with Amazon Rekognition and find each students in the photo from student registration server data.
+
+#### 
+
+
+
+
 ###### Note: Required configurations or integrations are handled via API Gateway.
 
 ### Configuration
@@ -41,26 +43,6 @@ cd Denison-Lib-Mandulo
 aws configure
 ```
 
-### Usage
-Execute workflows:
-* Make sure you have these installed with right versions.
-```
-node -v
-npm -v
-```
 
-run your Node.js file:
-* Navigate to the directory containing your Node.js using the terminal command pormpt. For example, if your file is named 'app.js', you can run it by typing. 
-
-Observe Output:
-* Check on our AWS DynamoDB named 'student-record'. student-record stores the attendance infomation for each user from the original attendance.
-
-### Contributing
-* We welcome contributions! If you're looking to contribute or make changes, kindly reach out to a project member before proceeding. This ensures smooth collaboration and maintains the integrity of the project.
-
-### Executing Program
-You do not need to install and get the same setting on AWS. We already have all of them built in our own server. You only need to download the js files and open app.js. It will shows you a window with two buttons, 'choose files' and 'Upload files'. Choose your files from your device and upload the files to the server. The result of face rekognition will show up next to the pictures.
-
-If desired, you can log in to the AWS Console to view the project's workflow 
 
 
