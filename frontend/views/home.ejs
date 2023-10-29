@@ -4,61 +4,72 @@
 <body>
     <div class="row">
         <div class="column1">
-            <ul>
-                <li><a href="/">Introduction to Data Analytics</a></li>
+            <ul style="list-style-type: none">
+                <li><a class="opened" href="/">Introduction to Data Analytics</a></li>
                 <li><a href="/">Markets, Polls & Soc Networks</a></li>
             </ul>
         </div>
         <div class="column2">
-            <ul>
-                <li><a href="/">Oct-27-2023</a></li>
+            <ul style="list-style-type: none">
+                <li><a class="opened" href="/">Oct-27-2023</a></li>
                 <li><a href="/">Oct-26-2023</a></li>
             </ul>
+           
+            
         </div>
         <div class="column3">
-            <img src='/images/sample.jpg' alt="crowded photo" width="100%" height="500">
+             <form id="form" action="/upload?_method=PUT" method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="_method" value="PUT">
+                <input type="file" id="dt" name="dt" accept=".jpeg, .jpg, .png"></input>
+                <div id='preview'>
+                </div>
+            <button id="submit">Upload file</button>
+            </form>
         </div>
         <div class="column4">
-            <div class="detailedbox">
-                <a href="/person"><img class= "detailedbox-photo"src='/images/person1.png' alt="crowded photo" width="100%" height="10%"></a>
-                <h5 class="detailedbox-text">Person1</h5>
-            </div>
-            <div class="detailedbox">
-                <a href="/person"><img class= "detailedbox-photo"src='/images/person2.png' alt="crowded photo" width="100%" height="10%"></a>
-                <h5 class="detailedbox-text">Person2</h5>
-            </div>
-            <div class="detailedbox">
-                <a href="/person"><img class= "detailedbox-photo"src='/images/person3.png' alt="crowded photo" width="100%" height="10%"></a>
-                <h5 class="detailedbox-text">Person3</h5>
-            </div>
-            <div class="detailedbox">
-                <a href="/person"><img class= "detailedbox-photo"src='/images/person4.png' alt="crowded photo" width="100%" height="10%"></a>
-                <h5 class="detailedbox-text">Person4</h5>
-            </div>
-            <div class="detailedbox">
-                <a href="/person"><img class= "detailedbox-photo"src='/images/person5.png' alt="crowded photo" width="100%" height="10%"></a>
-                <h5 class="detailedbox-text">Person5</h5>
-            </div>
-            <div class="detailedbox">
-                <a href="/person"><img class= "detailedbox-photo"src='/images/person5.png' alt="crowded photo" width="100%" height="10%"></a>
-                <h5 class="detailedbox-text">Person5</h5>
-            </div>
-            <div class="detailedbox">
-                <a href="/person"><img class= "detailedbox-photo"src='/images/person5.png' alt="crowded photo" width="100%" height="10%"></a>
-                <h5 class="detailedbox-text">Person5</h5>
-            </div>
-            <div class="detailedbox">
-                <a href="/person"><img class= "detailedbox-photo"src='/images/person5.png' alt="crowded photo" width="100%" height="10%"></a>
-                <h5 class="detailedbox-text">Person5</h5>
-            </div>
-            <div class="detailedbox">
-                <a href="/person"><img class= "detailedbox-photo"src='/images/person5.png' alt="crowded photo" width="100%" height="10%"></a>
-                
-            </div>
-            
+            <%studentdata.forEach((student)=>{%> 
+                <h5><a href="person"><%=student.firstName%> <%=student.lastName%></a></h5>
+                <h5>Attendance: <%=student.attendance%></h5>
+                <%})%> 
         </div>
     </div>
 </body>
+<script>
+    var upload = document.querySelector('#dt');
+    var preview = document.querySelector('#preview');
+ 
+    upload.addEventListener('change',function (e) {
+        
+        var get_file = e.target.files;
+ 
+        var image = document.createElement('img');
+        
+        var reader = new FileReader();
+ 
+
+        reader.onload = (function (aImg) {
+        if (document.querySelector('#imageid')){
+            document.querySelector('#imageid').remove()
+        }
+            console.log(1);
+ 
+            return function (e) {
+                console.log(3);
+
+                aImg.src = e.target.result
+            }
+        })(image)
+ 
+        if(get_file){
+            reader.readAsDataURL(get_file[0]);
+            console.log(2);
+        }
+        image.id="imageid";
+        image.width=300;
+        image.height=300;
+        preview.appendChild(image);
+    })
+</script>
 
     
 <%-include( './layout/footer')%>

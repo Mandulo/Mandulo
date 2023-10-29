@@ -38,7 +38,9 @@ header nav ul{
     display:flex;
     list-style-type: none;
 }
-
+.opened {
+    font-weight: bold;
+}
 header nav li{
     padding : 15px 15px;
 }
@@ -61,11 +63,9 @@ header nav ul li a:hover{
 .row{
     width:100%;
     height: 1000px;
-    padding-left:75px;
-    padding-right:75px;
 }
 .column1 {
-    font-size:15px;
+    font-size:25px;
     float: left;
     width: 20%;
     padding: 20px;
@@ -75,7 +75,7 @@ header nav ul li a:hover{
 }
 
 .column2 {
-    font-size:15px;
+    font-size:25px;
     float: left;
     width: 11%;
     padding: 20px;
@@ -85,8 +85,9 @@ header nav ul li a:hover{
 }
 
 .column3 {
+    font-size:25px;
     float: left;
-    width: 59%;
+    width: 57%;
     padding: 10px;
     background-color: #ffffff;
     height: 100%;
@@ -94,8 +95,9 @@ header nav ul li a:hover{
 }
 
 .column4 {
+    font-size:25px;
     float: left;
-    width: 10%;
+    width: 12%;
     padding: 10px;
     background-color: #ffffff;
     max-height: 1000px;
@@ -117,4 +119,24 @@ header nav ul li a:hover{
 .detailedbox-text{
     margin:0px;
     padding:0;
+}
+a:link {
+  color: black;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:visited {
+  color: black;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: gray;
+  background-color: transparent;
+  text-decoration: underline;
+}
+a:active {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: underline;
 }
