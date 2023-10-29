@@ -18,8 +18,39 @@ rekognition Api is accessible through python. https://docs.aws.amazon.com/manage
 ![KakaoTalk_Photo_2023-10-29-10-41-29](https://github.com/Denison-Library-Mandulo/Denison-Lib-Mandulo/assets/108073642/afce95e8-97fc-411d-8dd6-e357867667d8)
 
 ### Frontend Pipeline
+#### Initialization
+* School admin needs a web service to upload the photo for a review and get a result back.
 
 
+#### Introduction
+* A Front-end pipeline for uploading images, processing them using AWS services, and displaying the updated results. The pipeline utilizes Express.js as the web framework, Amazon S3 for image storage, and AWS for image processing.
+
+
+#### Prerequisites
+
+* Node.js and npm installed on your local machine.
+* AWS account with S3 bucket and relevant IAM permissions.
+* AWS services set up for image processing (e.g., AWS Lambda and Amazon Rekognition).
+* Express.js installed globally or as a project dependency.
+
+Make sure to install these dependencies:
+* express
+* path
+* method-override
+* aws-sdk
+* @aws-sdk/lib-dynamodb
+* aws-sdk/client-dynamodb
+* multer
+* multer-s3
+
+#### Features
+* Image Upload: User can upload an image to the web application for attendance check.
+
+* AWS Integration: Uploaded images are sent to an AWS S3 bucket named 'visitor-student-image-storage' for storage.
+
+* Image Processing: AWS Lambda is used to process the uploaded images.
+  
+* Display: Our web application is connected with AWS DynamoDB and gets the daily attendance record table, named 'student-record' processed data is displayed to the users.
 
 ### Backend Pipeline
 #### Initialization
