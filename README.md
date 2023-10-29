@@ -1,4 +1,7 @@
 # Automated Attendance Checker
+![KakaoTalk_Photo_2023-10-29-10-41-29](https://github.com/Denison-Library-Mandulo/Denison-Lib-Mandulo/assets/108073642/afce95e8-97fc-411d-8dd6-e357867667d8)
+
+
 
 
 ### College Attendance with AWS Rekognition and Cloud Computing
