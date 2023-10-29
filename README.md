@@ -39,6 +39,7 @@ cd Denison-Lib-Mandulo
 
 #### Processing Image
 * Uploaded photo data will be connected with student registration server and find each students in the photo from student registration server data using Amazon Rekognition.
+###### Note: We used pretrained Amazon Rekognition provided by AWS
 
 #### Storing data
 * Student attendance information need to be stored and updated in the server database.
