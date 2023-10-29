@@ -1,4 +1,4 @@
-# Automated Attendance
+# Automated Attendance Checker
 
 
 ### College Attendance with AWS Rekognition and Cloud Computing
@@ -29,7 +29,7 @@ cd Denison-Lib-Mandulo
 
 ### Backend Pipeline
 #### Initialization
-* School admin needs to connect student registration photo server data with the attendance tracker.
+* School admin needs to connect student registration photo server data with the Automated Attendance Checker.
 
 #### Processing Image
 * Uploaded photo data will be connected with student registration server and find each students in the photo from student registration server data using Amazon Rekognition.
