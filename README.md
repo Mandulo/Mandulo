@@ -23,7 +23,11 @@ Navigate to the project directory:
 cd Denison-Lib-Mandulo
 ```
 
-### Pipeline
+### Frontend Pipeline
+
+
+
+### Backend Pipeline
 #### Initialization
 * School admin needs to connect with student registration server data with the attendance tracker.
 
