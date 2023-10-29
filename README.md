@@ -2,6 +2,8 @@
 
 
 ### College Attendance with AWS Rekognition and Cloud Computing
+#### Demo video 
+https://github.com/Denison-Library-Mandulo/Denison-Lib-Mandulo/assets/106914387/1bcee40d-54b4-4e60-9afd-48e6c3d127c8
 
 
 ### Description
