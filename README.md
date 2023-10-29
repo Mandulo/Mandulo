@@ -39,7 +39,7 @@ cd Denison-Lib-Mandulo
 ###### Note: We used Dynomo DB provided by AWS 
 
 ### Authentication
-* Pictures for students will be updated through app.js to AWS S3 bucket, named 'visitor-student-image-storage'. Once this bucket get a new transaction, student_authorization is triggered and the authetication starts. Each faces would be detected and compared with the given the faces from another S3 butcket, named 'student-image-storage'. If Confidence parameter for a student is higher than the threshold = 80, then the students are approved for that day's attendance. This information would be updated to the database, DynamoDB changing the 'attendance' parameter's value of with the matching rekognitionId(primary Id) the most would be modified to 'Yes' from 'No'. Otherwise, it does not change. 
+* Pictures will be uploaded through node js, named 'app.js', to AWS S3 bucket, named 'visitor-student-image-storage'. Once this bucket detects a new change, student_authorization, is triggered and the authetication starts. The metadata of each face would be detected and compared with the metadata of the pictures from another S3 butcket, named 'student-image-storage'. If the confidence parameter for a student is higher than the threshold value, then those students are approved for that day's attendance. This information would be updated to the daily attendance record table, named 'student-record', from DynamoDB changing the 'attendance' value with the matching rekognitionId(primary Id) the most would be modified to 'Yes' from 'No'. Otherwise, it does not change. 
 
 
 
