@@ -6,12 +6,6 @@
 #### Demo video 
 https://github.com/Denison-Library-Mandulo/Denison-Lib-Mandulo/assets/106914387/81704e7e-faf6-4233-8a58-af152800bf65
 
-
-
-![KakaoTalk_Photo_2023-10-29-10-41-29](https://github.com/Denison-Library-Mandulo/Denison-Lib-Mandulo/assets/108073642/afce95e8-97fc-411d-8dd6-e357867667d8)
-
-
-
 ### Description
 Manage your attendance easily and efficiently with AWS{S3, DynamoDB, API Gateway, Lambda}, a python-based tool for automated deployment, and node-js. 
 
@@ -28,6 +22,8 @@ Navigate to the project directory:
 ```
 cd Denison-Lib-Mandulo
 ```
+### Workflow overview
+![KakaoTalk_Photo_2023-10-29-10-41-29](https://github.com/Denison-Library-Mandulo/Denison-Lib-Mandulo/assets/108073642/afce95e8-97fc-411d-8dd6-e357867667d8)
 
 ### Frontend Pipeline
 
