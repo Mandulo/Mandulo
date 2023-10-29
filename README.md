@@ -14,14 +14,6 @@ An AWS service that allows for image and video analysis. Using deep learning tec
 
 rekognition Api is accessible through python. https://docs.aws.amazon.com/managedservices/latest/userguide/rekognition.html 
 
-### Features
-* Automated Deployment: Deploy AWS S3 buckets, DynamoDB, and Lambda by sending images from 'app.js' using interface via AWS Gateway. 
-* Monitoring: Keep an eye on your resources and operations with AWS CloudWatch integration.
-
-Navigate to the project directory:
-```
-cd Denison-Lib-Mandulo
-```
 ### Workflow overview
 ![KakaoTalk_Photo_2023-10-29-10-41-29](https://github.com/Denison-Library-Mandulo/Denison-Lib-Mandulo/assets/108073642/afce95e8-97fc-411d-8dd6-e357867667d8)
 
