@@ -62,7 +62,7 @@ Make sure to install these dependencies:
 #### Storing data
 * Student attendance information need to be stored and updated in the server database.
 
-### Authentication
+#### Authentication
 * Authentication to check attendance of students, user may take full class picture and upload via our web-app.
 
 * Image will be send to appropriate AWS S3 bucket through API Gateway we built. Whenever there is a change occur in S3 bucket, it triggers our lambda function to be executed.
